@@ -1,4 +1,6 @@
   var map;
+  var infoWindow;
+  var bounds;
 
       // Create a new blank array for all the listing markers.
       var markers = [];
@@ -15,8 +17,7 @@
         // Normally we'd have these in a database instead.
         var locations = [
           {title: 'Starbucks',location: {lat: 38.899989, lng: -77.022143}},
-          {title: 'Chinatown Metro',location: {lat: 38.899635, lng: -77.021821}},
-          {title: 'Smithsonian Station',location: {lat: 38.889099, lng: -77.028463}}
+          {title: 'Chinatown Metro',location: {lat: 38.899635, lng: -77.021821}}
         ];
 
         var largeInfowindow = new google.maps.InfoWindow();

@@ -18,16 +18,28 @@
 </head>
 
 <body>
-  <div id="first-div">
-    <h2>Neighborhood Map</h2>
+
+  <div class="container">
+
+      <div class="options-box">
+        <h1>Neighborhood Meetup Map</h1>
+        <p>Some Washington D.C. Meetup Spots</p>
+        <div>
+          <input id="show-listings" type="button" value="Show Listings">
+          <input id="hide-listings" type="button" value="Hide Listings">
+        </div>
+      </div>
+
+    <div class="map" id="map">
+      <a class="error-message" href="https://developers.google.com/maps/documentation/javascript/get-api-key">Check your Google API Key</a>
+    </div>
+
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/test-app-2.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyBlQeId1YPB3-v0yBZHMNF7ZGPA11bhtcg&v=3&callback=initMap" onerror="MapsError()"></script>
+
   </div>
-  <div id="map"></div>
-
-  <script src="js/knockout-3.4.2.js"></script>
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/test-app-2.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyBlQeId1YPB3-v0yBZHMNF7ZGPA11bhtcg&v=3&callback=initMap"></script>
-
 
 </body>
 
