@@ -16,7 +16,14 @@
         var locations = [
           {title: 'Starbucks',location: {lat: 38.899989, lng: -77.022143}},
           {title: 'Chinatown Metro',location: {lat: 38.899635, lng: -77.021821}},
-          {title: 'Smithsonian Station',location: {lat: 38.889099, lng: -77.028463}}
+          {title: 'Smithsonian Station',location: {lat: 38.889099, lng: -77.028463}},
+          {title: 'Federal Triangle',location: {lat: 38.893782, lng: -77.028315}},
+          {title: 'LEnfant Plaza Station',location: {lat: 38.884784, lng: -77.020884}},
+          {title: 'Woodley Park-Zoo Metro Station',location: {lat: 38.924519, lng: -77.052387}},
+          {title: 'Navy-Yard Ballpark Station',location: {lat: 38.876673, lng: -77.004506}},
+          {title: 'Rosslyn Station',location: {lat: 38.895805, lng: -77.071909}},
+          {title: 'Panera Bread',location: {lat: 38.895588, lng: -77.072040}},
+          {title: 'Fort Totten Station',location: {lat: 38.951723, lng: -77.002113}}
         ];
 
         var largeInfowindow = new google.maps.InfoWindow();
