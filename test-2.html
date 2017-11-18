@@ -26,6 +26,9 @@
       <div>
           <input id="show-listings" type="button" value="Show Listings">
           <input id="hide-listings" type="button" value="Hide Listings">
+          <ul data-bind="foreach:places">
+            <li data-bind="text:title"></li>
+          </ul>
       </div>
       </div>
 
