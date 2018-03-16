@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Meetup Map</title>
+        <meta name="description" content="Meetup Map">
+        <meta name="author" content="Petergns">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS sheet -->
+        <link rel="stylesheet" href="css/style.css">
+        <!--[if lt IE 9]>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+      <div id="container" data-bind="style: { height: showToggleMenu() ? '465px' : '80px', width: showToggleMenu() ? '290px' : '70px' }">
+          <div id="menuIcon" data-bind="click: toggleMenu" height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;">
+            <img src="img/menu.png"><strong>Menu</strong>
+          </div>
+            <div id="dropdown" class="hide" data-bind="css: { show: showToggleMenu }">
+                <div class="heading">Meetup Map</div>
+                  <div id="filter">
+                    Search:
+                    <input data-bind="value: filter, valueUpdate: 'afterkeydown'">
+                  </div>
+                <div id="list">
+                    <div data-bind="foreach: filterList" class="places">
+                        <div data-bind="text: title, click: $root.triggerMarker" class="place"></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-ons-container">
+          <!-- Optional Help Modal -->
+          <button class="trigger"><img src="img/help.png"/></button>
+          <div class="modal">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <h2>Meetup/Neighborhood Map Help</h2>
+              [Optional Extra]
+              <h4>Github Link: <a href="https://github.com/petergns">https://github.com/petergns</a></h4>
+              <p>Refresh this Page with the Refresh Button</p>
+              <p>Click on Location Menu to:</p>
+              <ul>
+                <li>View the Titles of Map Locations
+                <li>Search the Titles of Map Locations
+                <li>Zoom to Map Location on Title Click
+              </ul>
+              <p>Click on Map Marker to view:</p>
+              <ul>
+                <li>Title of Map Location with URL
+                <li>Street Address of Location
+                <li>City and Zip Code of Location
+                <li>Google Street View of Location
+              </ul>
+            </div>
+          </div>
+          <!-- Refresh Button -->
+          <button><img src="img/refresh.png" onclick="reloadMap()"/></button>
+        </div>
+        <!-- Google Meetup Map -->
+        <div id="map"></div>
+        <!-- InfoWindow -->
+        <script type="text/html" id="info-template">
+            <div data-bind="with: currentLocation">
+              <b>Location:</b>
+              <a data-bind="attr: { href: url, text: title }">
+                <div id="m-title" data-bind="text: title"></div></a>
+                <b>Address:</b>
+               <div id="m-title" data-bind="text: street"></div>
+               <div id="m-title" data-bind="text: city"></div>
+            </div>
+            <b>Street View:</b>
+            <div id="pano"></div>
+        </script>
+        <!-- InfoWindow -->
+        <script src="js/lib/knockout-3.4.2.js"></script>
+        <script src="js/lib/jquery-3.2.1.js"></script>
+        <!-- Map Location Data -->
+        <script src="js/data.js"></script>
+        <!-- Map Styling -->
+        <script src="js/map-style.js"></script>
+        <!-- Base Map Script -->
+        <script src="js/map.js"></script>
+        <!-- Additional Features Script -->
+        <script src="js/add-ons.js"></script>
+        <!-- Google Maps API -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyCgq04Hb4YQWr30XMfsqesYU5kco2gbcFA&v=3&callback=StartMap"
+        onerror="mapError()">
+        </script>
+    </body>
+</html>

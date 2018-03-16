@@ -1,0 +1,154 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+#container {
+	position: absolute;
+	background-color: rgba(236, 237, 247, 0.76);
+	z-index: 1;
+	left: 4px;
+	top: 50px;
+	overflow: hidden;
+	border: 1px solid #00000042;
+}
+
+.heading {
+	font-size: 1.4em;
+	color: #1b1b1b;
+	text-align: center;
+	padding: 10px;
+	margin-top: 45px;
+}
+
+#filter {
+	font-size: 1.2em;
+	color: blue;
+	text-align: left;
+	padding-top: 1px;
+	padding-left: 10px;
+}
+
+.places {
+	text-align: left;
+	width: 90%;
+	padding: 3%;
+}
+
+.place {
+	cursor: pointer;
+	color: #000000cc;
+	font-size: 1em;
+	margin-bottom: -3px;
+}
+
+.place:hover {
+	color: blue;
+}
+
+#pano {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+.hide {
+	display: none;
+}
+
+.hide.show {
+	display: block;
+}
+
+.infowindow {
+	padding: 20px;
+	font-size: 1.4em;
+}
+
+#menuIcon {
+	cursor: pointer;
+	fill: rgb(88, 88, 88);
+	position: absolute;
+	left: 6px;
+	top: 10px;
+}
+
+#close {
+	cursor: pointer;
+	margin-left: 15px;
+	border: .5px solid;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border-radius: 15px;
+	color: #585858;
+}
+
+@media (max-width: 500px) {
+	#container {
+		max-width: 275px;
+	}
+}
+
+.add-ons-container {
+	position: absolute;
+	z-index: 2;
+	width: 50%;
+	margin-left: 4px;
+	margin-top: 10px;
+}
+
+/*Start Open Help [Optional Extra]*/
+/*Sourced From: https://sabe.io/tutorials/how-to-create-modal-popup-box*/
+
+.modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+    .close-button:hover {
+        background-color: darkgray;
+    }
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+/*End Open Help [Optional Extra]*/
