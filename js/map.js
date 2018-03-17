@@ -1,4 +1,4 @@
-// global access to the BaseViewModel
+// Set Global Vaules for View Model and Info Window
 var BaseViewModel;
 var infoWindow;
 // Set Place Locations
@@ -33,7 +33,7 @@ var Place = function(locations, BaseViewModel) {
     url: setURL,
     street: streetAddress,
     city: cityAddress,
-    // Set animation type
+    // Set Marker Animation Type
     animation: google.maps.Animation.DROP,
     icon: defaultIcon,
     id: id,
@@ -49,10 +49,10 @@ var Place = function(locations, BaseViewModel) {
     setTimeout(function() {
       marker.setAnimation(null);
     }, 750);
-    // update current location
+    // Update BaseViewModel Current Location
     BaseViewModel.currentLocation(marker);
   }, this);
-  // Merged
+  // Add Marker Listerner for Highlighted and Default Icon
   this.marker.addListener("mouseover", function() {
     this.setIcon(highlightedIcon, defaultIcon);
   });
@@ -60,13 +60,14 @@ var Place = function(locations, BaseViewModel) {
     infoWindow.close();
   });
   populateInfoWindow = function(marker, infowindow) {
-    // make sure infowindow is not open already
+    // Listerner to Check Whether InfoWindow Open
     infowindow.addListener("closeclick", function() {
       infowindow.marker = null;
     });
+    // Set StreetView Radius
     var streetViewService = new google.maps.StreetViewService();
     var radius = 50;
-    // if Status OK, comput position of street view image
+    // If StreetViewStatus Okay Then Show StreetView
     getStreetView = function(data, status) {
       if (status == google.maps.StreetViewStatus.OK) {
         var nearStreetViewLocation = data.location.latLng;
@@ -80,7 +81,7 @@ var Place = function(locations, BaseViewModel) {
           }
         };
         var panorama = new google.maps.StreetViewPanorama(document.getElementById(
-          "pano"), panoramaOptions);
+          "pano-box"), panoramaOptions);
       } else {
         infowindow.setContent("<div>" + setTitle + streetAddress +
           cityAddress + "</div><div>No Street View Found</div>");
@@ -125,14 +126,14 @@ var ViewModel = function() {
     });
   };
   infoWindowShow();
-  // push locations to observable array
+  // Push Locations to Array Observable
   locations.forEach(function(COORD) {
     self.locationsList()
       .push(new Place(COORD, self));
   });
-  // current location
+  // Set Current Location
   self.currentLocation = ko.observable(this.locationsList()[0]);
-  // filter functionality, var set blank
+  // Filter Place Titles
   this.filter = ko.observable("");
   this.filterList = ko.computed(function() {
     var matches = self.locationsList()
@@ -152,7 +153,7 @@ var ViewModel = function() {
       });
     return matches
   });
-  // show and hide menu
+  // Show Menu and Hide Menu
   this.showToggleMenu = ko.observable(false);
   this.toggleMenu = function() {
     this.showToggleMenu(!this.showToggleMenu());
@@ -169,7 +170,7 @@ var ViewModel = function() {
       self.filter("");
     };
   };
-  // trigger marker click, when list item is clicked
+  // When List Item Clicked Trigger Marker
   this.triggerMarker = function(place) {
     google.maps.event.trigger(place.marker, "click");
   };
