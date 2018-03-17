@@ -17,13 +17,13 @@
     <body>
 
       <div id="container" data-bind="style: { height: showToggleMenu() ? '465px' : '80px', width: showToggleMenu() ? '290px' : '70px' }">
-          <div id="menuIcon" data-bind="click: toggleMenu" height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;">
+          <div id="menuIcon" data-bind="click: toggleMenu" height="32px" id="Overlay">
             <img src="img/menu.png" title="Open Map Menu"><strong>Menu</strong>
           </div>
             <div id="dropdown" class="hide" data-bind="css: { show: showToggleMenu }">
                 <div class="heading">Meetup Map</div>
                   <div id="filter">
-                    Search:
+                    <strong>Search:</strong>
                     <input data-bind="value: filter, valueUpdate: 'afterkeydown'">
                   </div>
                 <div id="list">
@@ -71,11 +71,11 @@
         <script type="text/html" id="info-template">
             <div data-bind="with: currentLocation">
               <b>Location:</b>
-              <a data-bind="attr: { href: url, text: title }">
-                <div id="data-title" data-bind="text: title"></div></a>
+              <a class="data-title" data-bind="attr: { href: url, text: title }">
+                <div class="data-title" data-bind="text: title"></div></a>
                 <b>Address:</b>
-               <div id="data-title" data-bind="text: street"></div>
-               <div id="data-title" data-bind="text: city"></div>
+               <div class="data-title" data-bind="text: street"></div>
+               <div class="data-title" data-bind="text: city"></div>
             </div>
             <b>Street View:</b>
             <div id="pano-box"></div>

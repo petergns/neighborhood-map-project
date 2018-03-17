@@ -29,6 +29,7 @@ body {
 
 .heading {
 	font-size: 1.4em;
+	font-family: 'Roboto', sans-serif;
 	color: #1b1b1b;
 	text-align: center;
 	padding: 10px;
@@ -52,6 +53,7 @@ body {
 .place {
 	cursor: pointer;
 	color: #000000cc;
+	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
 	margin-bottom: -3px;
 }
@@ -77,6 +79,7 @@ body {
 .infowindow {
 	padding: 20px;
 	font-size: 1.4em;
+	font-family: 'Roboto', sans-serif;
 }
 
 #menuIcon {
