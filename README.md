@@ -19,7 +19,7 @@ Follow these instructions to set up the Neighborhood Map Project.
 2. Create a API key: https://developers.google.com/maps/documentation/javascript/get-api-key
 
 ### Add Google Maps API
-1.
+1. Create Project and Credentials.
 2. Add the following API to your project: https://console.developers.google.com/apis/library?
 * Google Maps Directions API
 * Google Maps Distance Matrix API
