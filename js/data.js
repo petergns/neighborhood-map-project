@@ -1,12 +1,20 @@
 var locations = [{
+	// Location Title
 	title: "Starbucks, Chinatown",
+	// Location URl (https://YOURURLHERE)
 	url: "starbucks.com/store-locator/store/16174/",
+	// Location Street ID
 	street: "800 7th St NW #305",
+	// Location City & Zip Code
 	city: "Washington, DC 20001",
+	// Location Coordinates
 	COORD: {
+		// Location Latitude
 		lat: 38.8998386,
+		// Location Longitude
 		lng: -77.0220971
 	},
+	// Location ID #
 	id: 1
 }, {
 	title: "Chinatown Metro Station",
