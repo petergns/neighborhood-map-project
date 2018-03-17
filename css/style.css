@@ -7,16 +7,43 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* Links Font Styles */
+a {
+	text-decoration:  none;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+/* Titles & Headers */
+
+.header {
+	font-size: 1.4em;
+	font-family: 'Roboto', sans-serif;
+	color: #1b1b1b;
+	text-align: center;
+	padding: 10px;
+	margin-top: 45px;
+}
+
 .data-title {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* Google Maps Info Window Font Style */
+.gm-style .gm-style-iw {
+		font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+/*Map Dimensions*/
 #map {
 	height: 100%;
 	width: 100%;
 	position: relative;
 }
 
+/*Menu Container */
 #container {
 	position: absolute;
 	background-color: rgba(236, 237, 247, 0.76);
@@ -27,15 +54,7 @@ body {
 	border: 1px solid #00000042;
 }
 
-.heading {
-	font-size: 1.4em;
-	font-family: 'Roboto', sans-serif;
-	color: #1b1b1b;
-	text-align: center;
-	padding: 10px;
-	margin-top: 45px;
-}
-
+/*Menu Container */
 #filter {
 	font-size: 1.2em;
 	color: blue;
@@ -44,30 +63,15 @@ body {
 	padding-left: 10px;
 }
 
+/* Menu Map Locations */
+
 .places {
 	text-align: left;
 	width: 90%;
 	padding: 3%;
 }
 
-.place {
-	cursor: pointer;
-	color: #000000cc;
-	font-family: 'Roboto', sans-serif;
-	font-size: 1em;
-	margin-bottom: -3px;
-}
-
-.place:hover {
-	color: blue;
-}
-
-#pano-box {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
-}
-
+/* Hide & Show Menu Styles */
 .hide {
 	display: none;
 }
@@ -76,20 +80,36 @@ body {
 	display: block;
 }
 
-.infowindow {
-	padding: 20px;
-	font-size: 1.4em;
+/* Menu Map Location Styles & Position */
+.place {
+	cursor: pointer;
+	color: #000000cc;
 	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	margin-bottom: -3px;
 }
 
+/* Menu Map Location Pointer Hover Color */
+.place:hover {
+	color: blue;
+}
+
+/* Panorama Dimensions in InfoWindow */
+#pano-box {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+/* Menu Icon Position and Cursor */
 #menuIcon {
 	cursor: pointer;
-	fill: rgb(88, 88, 88);
 	position: absolute;
 	left: 6px;
 	top: 10px;
 }
 
+/* Menu Padding, Border, and Cursor */
 #close {
 	cursor: pointer;
 	margin-left: 15px;
@@ -108,6 +128,7 @@ body {
 	}
 }
 
+/*Add-On Container Dimensions */
 .add-ons-container {
 	position: absolute;
 	z-index: 2;

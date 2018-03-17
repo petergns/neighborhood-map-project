@@ -11,7 +11,7 @@ var Place = function(locations, BaseViewModel) {
   this.city = ko.observable(locations.city);
   var id = locations.id;
   // Set Marker Styles/Type
-  makeMarkerIcon = function(markerColor) {
+  setMarkerIcon = function(markerColor) {
     var markerImage = new google.maps.MarkerImage(
       "http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|" +
       markerColor + "|40|_|%E2%80%A2", new google.maps.Size(21, 34), new google
@@ -20,8 +20,8 @@ var Place = function(locations, BaseViewModel) {
     return markerImage;
   };
   // Marker Icon Colors
-  var defaultIcon = makeMarkerIcon("5184eb");
-  var highlightedIcon = makeMarkerIcon("51d1eb");
+  var defaultIcon = setMarkerIcon("5184eb");
+  var highlightedIcon = setMarkerIcon("51d1eb");
   // Provide Marker InfoWindow Content
   var setTitle = this.title();
   var setURL = "https://" + this.url();
@@ -97,7 +97,7 @@ var Place = function(locations, BaseViewModel) {
 var ViewModel = function() {
   var self = this;
   this.locationsList = ko.observableArray([]);
-  // create main map, google maps api
+  // Create Map and Apply Google Maps API
   map = new google.maps.Map(document.getElementById("map"), {
     center: {
       lat: 38.899317,
@@ -105,9 +105,11 @@ var ViewModel = function() {
     },
     zoom: 13,
     styles: mapstyle,
-    mapTypeControl: false
+    mapTypeControl: false,
   });
+
   infoWindowShow = function() {
+    // Set Info Window Content
     var StartID = "<div id=";
     var DivID = "\"InfoWindowBox\" data-bind=\"template:";
     var TmplType = "{ name: ";
@@ -126,6 +128,7 @@ var ViewModel = function() {
     });
   };
   infoWindowShow();
+
   // Push Locations to Array Observable
   locations.forEach(function(COORD) {
     self.locationsList()

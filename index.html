@@ -21,7 +21,7 @@
             <img src="img/menu.png" title="Open Map Menu"><strong>Menu</strong>
           </div>
             <div id="dropdown" class="hide" data-bind="css: { show: showToggleMenu }">
-                <div class="heading">Meetup Map</div>
+                <div class="header">Meetup Map</div>
                   <div id="filter">
                     <strong>Search:</strong>
                     <input data-bind="value: filter, valueUpdate: 'afterkeydown'">
@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="add-ons-container">
           <!-- Optional Help Modal -->
           <button class="trigger"><img src="img/help.png" title="Help"/></button>
@@ -73,13 +74,13 @@
               <b>Location:</b>
               <a class="data-title" data-bind="attr: { href: url, text: title }">
                 <div class="data-title" data-bind="text: title"></div></a>
-                <b>Address:</b>
                <div class="data-title" data-bind="text: street"></div>
                <div class="data-title" data-bind="text: city"></div>
             </div>
             <b>Street View:</b>
             <div id="pano-box"></div>
         </script>
+
         <!-- InfoWindow -->
         <script src="js/lib/knockout-3.4.2.js"></script>
         <script src="js/lib/jquery-3.2.1.js"></script>
