@@ -41,9 +41,9 @@ https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=YO
 Open the index.html file in a web browser to load the Map.
 
 ### Useful Editors:
-Atom(https://atom.io/)
-Notepad++(https://notepad-plus-plus.org/)
-Sublime Text(https://www.sublimetext.com/)
+* Atom(https://atom.io/)
+* Notepad++(https://notepad-plus-plus.org/)
+* Sublime Text(https://www.sublimetext.com/)
 
 ### Meetup Map when in Browser:
 ![Image of Output](https://raw.githubusercontent.com/petergns/neighborhood-map-project/master/img/map-example-1.PNG)
