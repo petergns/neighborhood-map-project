@@ -8,6 +8,7 @@
         <meta name="author" content="Petergns">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS sheet -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <!--[if lt IE 9]>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -17,7 +18,7 @@
 
       <div id="container" data-bind="style: { height: showToggleMenu() ? '465px' : '80px', width: showToggleMenu() ? '290px' : '70px' }">
           <div id="menuIcon" data-bind="click: toggleMenu" height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;">
-            <img src="img/menu.png"><strong>Menu</strong>
+            <img src="img/menu.png" title="Open Map Menu"><strong>Menu</strong>
           </div>
             <div id="dropdown" class="hide" data-bind="css: { show: showToggleMenu }">
                 <div class="heading">Meetup Map</div>
@@ -35,10 +36,10 @@
         </div>
         <div class="add-ons-container">
           <!-- Optional Help Modal -->
-          <button class="trigger"><img src="img/help.png"/></button>
+          <button class="trigger"><img src="img/help.png" title="Help"/></button>
           <div class="modal">
             <div class="modal-content">
-              <span class="close-button">&times;</span>
+              <span class="close-button" title="Close">&times;</span>
               <h2>Meetup/Neighborhood Map Help</h2>
               [Optional Extra]
               <h4>Github Link:
@@ -62,7 +63,7 @@
             </div>
           </div>
           <!-- Refresh Button -->
-          <button><img src="img/refresh.png" onclick="reloadMap()"/></button>
+          <button><img src="img/refresh.png" title="Refresh Map" onclick="reloadMap()"/></button>
         </div>
         <!-- Google Meetup Map -->
         <div id="map"></div>
@@ -71,10 +72,10 @@
             <div data-bind="with: currentLocation">
               <b>Location:</b>
               <a data-bind="attr: { href: url, text: title }">
-                <div id="m-title" data-bind="text: title"></div></a>
+                <div id="data-title" data-bind="text: title"></div></a>
                 <b>Address:</b>
-               <div id="m-title" data-bind="text: street"></div>
-               <div id="m-title" data-bind="text: city"></div>
+               <div id="data-title" data-bind="text: street"></div>
+               <div id="data-title" data-bind="text: city"></div>
             </div>
             <b>Street View:</b>
             <div id="pano-box"></div>

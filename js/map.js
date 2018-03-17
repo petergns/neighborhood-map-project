@@ -20,8 +20,8 @@ var Place = function(locations, BaseViewModel) {
     return markerImage;
   };
   // Marker Icon Colors
-  var defaultIcon = makeMarkerIcon("EBB851");
-  var highlightedIcon = makeMarkerIcon("FF7878");
+  var defaultIcon = makeMarkerIcon("5184eb");
+  var highlightedIcon = makeMarkerIcon("51d1eb");
   // Provide Marker InfoWindow Content
   var setTitle = this.title();
   var setURL = "https://" + this.url();
