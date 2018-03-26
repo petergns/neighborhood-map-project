@@ -7,6 +7,7 @@ var locations = [{
 	street: "800 7th St NW #305",
 	// Location City & Zip Code
 	city: "Washington, DC 20001",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	// Location Coordinates
 	COORD: {
 		// Location Latitude
@@ -21,6 +22,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/gallery-place.cfm",
 	street: "H St NW & 7th Street Northwest",
 	city: "Washington, DC 20001",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.899634,
 		lng: -77.021819
@@ -31,6 +33,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/smithsonian.cfm?y=12",
 	street: "1278-1160 Jefferson Dr SW",
 	city: "Washington, DC 20024",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.889057,
 		lng: -77.028505
@@ -41,6 +44,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/federal-triangle.cfm?y=12",
 	street: "302 12th St. NW",
 	city: "Washington, DC 20004",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.893782,
 		lng: -77.028315
@@ -63,7 +67,7 @@ var locations = [{
 	city: "Washington, DC 20008",
 	COORD: {
 		lat: 38.924519,
-		lng: -77.0523838
+		lng: -77.0522323
 	},
 	id: 6
 }, {
@@ -79,7 +83,7 @@ var locations = [{
 }, {
 	title: "Rosslyn Metro Station",
 	url: "wmata.com/rider-guide/stations/rosslyn.cfm?y=12",
-	street: "61850 North Moore St",
+	street: "1850 North Moore St",
 	city: "Arlington, VA 22209",
 	COORD: {
 		lat: 38.895805,
