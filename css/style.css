@@ -28,6 +28,7 @@ a {
 
 .data-title {
 	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
 }
 
 /* Google Maps Info Window Font Style */
@@ -153,4 +154,12 @@ a {
 .no-bullets {
 	list-style-type: none;
 	padding-left: 0px;
+}
+
+.backGR {
+	border: 1px solid black;
+}
+
+.bold-this {
+	font-weight: bold;
 }

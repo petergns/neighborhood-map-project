@@ -9,7 +9,7 @@ var Place = function(locations, BaseViewModel) {
   this.url = ko.observable(locations.url);
   this.street = ko.observable(locations.street);
   this.city = ko.observable(locations.city);
-  this.venueID = ko.observable(locations.venueID);
+  this.like = ko.observable(locations.like);
   var id = locations.id;
   // Set Marker Styles/Type
   setMarkerIcon = function(markerColor) {
@@ -29,14 +29,14 @@ var Place = function(locations, BaseViewModel) {
   var setURL = "https://" + this.url();
   var streetAddress = this.street();
   var cityAddress = this.city();
-  var setVenueID = this.venueID();
+  var setLike = this.like();
   this.marker = new google.maps.Marker({
     position: position,
     title: setTitle,
     url: setURL,
     street: streetAddress,
     city: cityAddress,
-    venueID: setVenueID,
+    like: setLike,
     // Set Marker Animation Type
     animation: google.maps.Animation.DROP,
     icon: defaultIcon,
@@ -68,36 +68,20 @@ var Place = function(locations, BaseViewModel) {
     infowindow.addListener("closeclick", function() {
       infowindow.marker = null;
     });
-    // Foursquare API Days
-    var days = ["Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"];
-    // Foursquare Client ID Client Secret
-    var	CLIENT_ID = "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&";
-    var CLIENT_SECRET = "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&";
-    // Foursquare Ajax ${CLIENT_ID}
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
     $.ajax ({
       method: "get",
-      url: "https://api.foursquare.com/v2/"
-            // Venues Foursquare API
-            + "/venues/"
-            + marker.venueID
-            // Venue Hours Foursquare API
-            + "/hours?"
-            // Foursquare Client ID
-            + CLIENT_ID
-            // Foursquare Client Secret
-            + CLIENT_SECRET
-            + "v=20180329",
+      url: "https://api.foursquare.com/v2/venues/" + marker.like
+      + "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&" +
+      "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&v=20180329",
 
     }).done(function(apiData){
+      console.log(apiData.response.hours.timeframes[0])
       $("#hoursList").empty()
       var timeframes = apiData.response.hours.timeframes
       for(var i = 0;i<timeframes.length;i++){
+        console.log(timeframes[i].days)
         for (var k = 0; k < timeframes[i].days.length; k++){
           var dayIndex = timeframes[i].days[k];
           var timestring = "";
@@ -106,14 +90,15 @@ var Place = function(locations, BaseViewModel) {
             var startString = timeObj.start.replace("+", "");
             var endString = timeObj.end.replace("+", "");
             timeString = timeSplit(startString) + "-" + timeSplit(endString);
+            console.log(timeString)
           }
-          // Display Hours
+          // console.log(timeObj)
           var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
           $("#hoursList").append(liString)
   }
 
       }
-    // Display Errors if they exist in console
+
     }).fail(function(err){
       console.log(err)
     })
@@ -177,6 +162,8 @@ var Place = function(locations, BaseViewModel) {
 };
 var ViewModel = function() {
   var self = this;
+  var	CLIENT_ID = 'ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5';
+  var CLIENT_SECRET = 'NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI';
   this.locationsList = ko.observableArray([]);
   // Create Map and Apply Google Maps API
   map = new google.maps.Map(document.getElementById("map"), {

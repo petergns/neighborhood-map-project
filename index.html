@@ -58,16 +58,16 @@
       <!-- InfoWindow -->
       <script type="text/html" id="info-template">
           <div data-bind="with: currentLocation">
-            <b>Location:</b>
-            <a class="data-title" data-bind="attr: { href: url, text: title }">
+              <a class="data-title" data-bind="attr: { href: url, text: title }">
               <div class="data-title" data-bind="text: title"></div></a>
              <div class="data-title" data-bind="text: street"></div>
              <div class="data-title" data-bind="text: city"></div>
              <!--<a class="data-title" data-bind="attr: { href: like, text: title }">
                Foursquare Link</a> -->
           </div>
-          <b>Open Hours:</b>
-          <div id="hours">
+          <br>
+          <div id="hours" class="data-title">
+            <b>Open Hours:</b>
             <ul id="hoursList" class="no-bullets"></ul>
           </div>
           <div id="pano-box"></div>
