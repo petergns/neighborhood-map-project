@@ -60,4 +60,4 @@ Open the index.html file in a web browser to load the Map.
 Acknowledgments to the following for helping me develop this project:
 * [Udacity](https://www.udacity.com/)
 * [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
-* [Sabe Io Tutorial](https://sabe.io/tutorials/how-to-create-modal-popup-box)
+* [Bootstrap](https://getbootstrap.com/)
