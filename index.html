@@ -63,10 +63,13 @@
               <div class="data-title" data-bind="text: title"></div></a>
              <div class="data-title" data-bind="text: street"></div>
              <div class="data-title" data-bind="text: city"></div>
-             <a class="data-title" data-bind="attr: { href: like, text: title }">
-               Foursquare Link</a>
+             <!--<a class="data-title" data-bind="attr: { href: like, text: title }">
+               Foursquare Link</a> -->
           </div>
-          <b>Street View:</b>
+          <b>Open Hours:</b>
+          <div id="hours">
+            <ul id="hoursList" class="no-bullets"></ul>
+          </div>
           <div id="pano-box"></div>
       </script>
     <!-- Footer -->
@@ -76,17 +79,21 @@
       </div>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <!-- More Scripts -->
     <script src="js/lib/knockout-3.4.2.js"></script>
+      <!-- Google Maps API -->
+    <script src="js/map.js"></script>
+    <!-- Additional Features Script -->
+    <script src="js/add-ons.js"></script>
     <!-- Map Location Data -->
     <script src="js/data.js"></script>
     <!-- Map Styling -->
     <script src="js/map-style.js"></script>
     <!-- Base Map Script -->
-    <script src="js/map-2.js"></script>
-    <!-- Additional Features Script -->
-    <script src="js/add-ons.js"></script>
-    <!-- Google Maps API -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyCgq04Hb4YQWr30XMfsqesYU5kco2gbcFA&v=3&callback=StartMap"
     onerror="mapError()">
     </script>
@@ -94,7 +101,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/lib/jquery-3.2.1.slim.min.js"></script>
+    <!--  <script src="js/lib/jquery-3.2.1.slim.min.js"></script> -->
     <script src="js/lib/popper.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
   </body>

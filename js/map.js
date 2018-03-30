@@ -20,6 +20,7 @@ var Place = function(locations, BaseViewModel) {
         21, 34));
     return markerImage;
   };
+  var ampm = "";
   // Marker Icon Colors
   var defaultIcon = setMarkerIcon("5184eb");
   var highlightedIcon = setMarkerIcon("51d1eb");
@@ -28,7 +29,7 @@ var Place = function(locations, BaseViewModel) {
   var setURL = "https://" + this.url();
   var streetAddress = this.street();
   var cityAddress = this.city();
-  var setLike = "https://api.foursquare.com/v2/venues/" + this.like();
+  var setLike = this.like();
   this.marker = new google.maps.Marker({
     position: position,
     title: setTitle,
@@ -67,6 +68,66 @@ var Place = function(locations, BaseViewModel) {
     infowindow.addListener("closeclick", function() {
       infowindow.marker = null;
     });
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    $.ajax ({
+      method: "get",
+      url: "https://api.foursquare.com/v2/venues/" + marker.like
+      + "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&" +
+      "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&v=20180329",
+
+    }).done(function(apiData){
+      console.log(apiData.response.hours.timeframes[0])
+      $("#hoursList").empty()
+      var timeframes = apiData.response.hours.timeframes
+      for(var i = 0;i<timeframes.length;i++){
+        console.log(timeframes[i].days)
+        for (var k = 0; k < timeframes[i].days.length; k++){
+          var dayIndex = timeframes[i].days[k];
+          var timestring = "";
+          for (var j = 0; j < timeframes[i].open.length; j++) {
+            var timeObj = timeframes[i].open[j];
+            var startString = timeObj.start.replace("+", "");
+            var endString = timeObj.end.replace("+", "");
+            timeString = timeSplit(startString) + "-" + timeSplit(endString);
+            console.log(timeString)
+          }
+          // console.log(timeObj)
+          var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
+          $("#hoursList").append(liString)
+  }
+
+      }
+
+    }).fail(function(err){
+      console.log(err)
+    })
+
+    function timeSplit(time) {
+      var hours = time.slice(0,2);
+      var minutes = time.slice(2,4);
+      if(hours[0] == "0") {
+        hours = hours[1]
+      }
+      if (Number(hours) > 12) {
+        var newHours = Number(hours) - 12
+        hours = newHours.toString()
+        ampm = "PM"
+      }
+      else {
+        ampm = "AM"
+      }
+      if (Number(hours) % 12 === 0) {
+        if (Number(hours) === 12) {
+          ampm = "PM"
+        }
+        else if (Number(hours) === 0 || Number(hours) === 24) {
+          ampm = "AM"
+          hours = "12"
+        }
+      }
+      return hours + ":" + minutes + ampm
+    }
     // Set StreetView Radius
     var streetViewService = new google.maps.StreetViewService();
     var radius = 50;
@@ -84,8 +145,6 @@ var Place = function(locations, BaseViewModel) {
           }
         };
       // Place New Function Here
-        var Fish = "Cat";
-      // var Frog = infowindow.setContent(setLike);
       // Google Maps Panorama Box
         var panorama = new google.maps.StreetViewPanorama(document.getElementById(
           "pano-box"), panoramaOptions);
