@@ -273,3 +273,7 @@ StartMap = function() {
 mapError = function() {
   document.write("The Google Map has Failed to Load");
 }
+// Reload Map Function
+function reloadMap() {
+    location.reload();
+}
