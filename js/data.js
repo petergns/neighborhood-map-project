@@ -84,7 +84,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/navy-yard.cfm",
 	street: "200 M Street SE",
 	city: "Washington, DC 20003",
-	venueID: "4a8ae0e5f964a520b50a20e3",
+	venueID: "4bd22c669854d13a7b25fb4d",
 	hours: "",
 	COORD: {
 		lat: 38.876678,
@@ -96,7 +96,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/rosslyn.cfm?y=12",
 	street: "1850 North Moore St",
 	city: "Arlington, VA 22209",
-	venueID: "4a8ae0e5f964a520b50a20e3",
+	venueID: "4ae0bdc5f964a520168221e3",
 	hours: "",
 	COORD: {
 		lat: 38.895805,
@@ -108,7 +108,7 @@ var locations = [{
 	url: "locations.panerabread.com/va/arlington/1700-n--moore-street-suite-110.html",
 	street: "1700 N Moore St Suite 110",
 	city: "Arlington, VA 22209",
-	venueID: "4a8ae0e5f964a520b50a20e3",
+	venueID: "52333bab11d2d4a9ffcc22a1",
 	hours: "",
 	COORD: {
 		lat: 38.895588,
@@ -120,7 +120,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/fort-totten.cfm?y=36",
 	street: "340 Galloway St NE",
 	city: "Washington, DC 20011",
-	venueID: "4a8ae0e5f964a520b50a20e3",
+	venueID: "4ab4fb23f964a520e17120e3",
 	hours: "",
 	COORD: {
 		lat: 38.952487,
