@@ -108,7 +108,11 @@ var Place = function(locations, BaseViewModel) {
             timeString = timeSplit(startString) + "-" + timeSplit(endString);
           }
           // Display Hours
-          var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
+          var liString = "<li>"
+                          + days[dayIndex-1]
+                          + "  "
+                          + timeString
+                          + "</li>";
           $("#hoursList").append(liString)
   }
 
