@@ -94,33 +94,32 @@ var Place = function(locations, BaseViewModel) {
             + CLIENT_SECRET
             + "v=20180329",
 
-    }).done(function(apiData){
-      $("#hoursList").empty()
-      var timeframes = apiData.response.hours.timeframes
-      for(var i = 0;i<timeframes.length;i++){
-        for (var k = 0; k < timeframes[i].days.length; k++){
-          var dayIndex = timeframes[i].days[k];
-          var timestring = "";
-          for (var j = 0; j < timeframes[i].open.length; j++) {
-            var timeObj = timeframes[i].open[j];
-            var startString = timeObj.start.replace("+", "");
-            var endString = timeObj.end.replace("+", "");
-            timeString = timeSplit(startString) + "-" + timeSplit(endString);
-          }
-          // Display Hours
-          var liString = "<li>"
-                          + days[dayIndex-1]
-                          + "  "
-                          + timeString
-                          + "</li>";
-          $("#hoursList").append(liString)
-  }
+          }).done(function(apiData){
+            console.log(apiData.response.hours.timeframes[0])
+            $("#hoursList").empty()
+            var timeframes = apiData.response.hours.timeframes
+            for(var i = 0;i<timeframes.length;i++){
+              console.log(timeframes[i].days)
+              for (var k = 0; k < timeframes[i].days.length; k++){
+                var dayIndex = timeframes[i].days[k];
+                var timestring = "";
+                for (var j = 0; j < timeframes[i].open.length; j++) {
+                  var timeObj = timeframes[i].open[j];
+                  var startString = timeObj.start.replace("+", "");
+                  var endString = timeObj.end.replace("+", "");
+                  timeString = timeSplit(startString) + "-" + timeSplit(endString);
+                  console.log(timeString)
+                }
+                // console.log(timeObj)
+                var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
+                $("#hoursList").append(liString)
+        }
 
-      }
-    // Display Errors if they exist in console
-    }).fail(function(err){
-      console.log(err)
-    })
+            }
+
+          }).fail(function(err){
+            console.log(err)
+          })
 
     function timeSplit(time) {
       var hours = time.slice(0,2);
