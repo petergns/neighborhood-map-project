@@ -35,7 +35,9 @@ Follow these instructions to set up the Neighborhood Map Project.
 
 ### Add your Google API Key
 Add your Google API Key in the index.html file:
+```
 https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=YOURKEYHERE&v=3&callback=StartMap
+```
 
 ### Create Foursquare Developer Account
 1. Create Foursquare Developer Account: https://developer.foursquare.com/
@@ -43,8 +45,10 @@ https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=YO
 
 ### Add your Foursquare Developer API Key
 Add your Foursquare API  key in the maps.js file:
+```
 var CLIENT_ID = "client_id=YOUR_CLIENT_ID&";
 var CLIENT_SECRET = "client_secret=YOUR_CLIENT_SECRET&";
+```
 
 ### Load the Map
 Open the index.html file in a web browser to load the Map.
