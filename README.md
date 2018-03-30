@@ -67,9 +67,7 @@ Open the index.html file in a web browser to load the Map.
 [petergns](https://github.com/petergns)
 
 ### Free Image Resource
-1. https://pixabay.com/en/question-mark-question-icon-blue-310100/
-2. https://pixabay.com/en/refresh-update-icon-reload-renew-525698/
-3. https://pixabay.com/en/gps-color-locator-map-online-2845363/
+1. https://pixabay.com/en/the-location-of-the-map-where-way-1724293/
 
 ## Acknowledgments
 Acknowledgments to the following for helping me develop this project:

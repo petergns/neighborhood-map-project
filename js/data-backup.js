@@ -48,7 +48,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/federal-triangle.cfm?y=12",
 	street: "302 12th St. NW",
 	city: "Washington, DC 20004",
-	venueID: "4aaffd05f964a520756520e3",
+	venueID: "4a8ae0e5f964a520b50a20e3",
 	hours: "",
 	COORD: {
 		lat: 38.893782,
@@ -60,7 +60,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/lenfant-plaza.cfm?y=47",
 	street: "600 Maryland Avenue SW",
 	city: "Washington, DC 20024",
-	venueID: "4ad6207df964a5203d0521e3",
+	venueID: "4a8ae0e5f964a520b50a20e3",
 	hours: "",
 	COORD: {
 		lat: 38.884784,
@@ -72,7 +72,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/woodley-park.cfm?y=38",
 	street: "2700 Connecticut Ave. NW",
 	city: "Washington, DC 20008",
-	venueID: "4af84ed5f964a520160c22e3",
+	venueID: "4a8ae0e5f964a520b50a20e3",
 	hours: "",
 	COORD: {
 		lat: 38.924519,
