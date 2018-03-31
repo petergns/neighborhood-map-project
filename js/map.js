@@ -69,83 +69,77 @@ var Place = function(locations, BaseViewModel) {
       infowindow.marker = null;
     });
     // Foursquare API Days
-    var days = ["Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"];
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+      "Saturday", "Sunday"
+    ];
     // Foursquare Client ID Client Secret
-    var	CLIENT_ID = "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&";
-    var CLIENT_SECRET = "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&";
+    var CLIENT_ID =
+      "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&";
+    var CLIENT_SECRET =
+      "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&";
     // Foursquare Ajax ${CLIENT_ID}
-    $.ajax ({
+    $.ajax({
       method: "get",
-      url: "https://api.foursquare.com/v2/"
-            // Venues Foursquare API
-            + "/venues/"
-            + marker.venueID
-            // Venue Hours Foursquare API
-            + "/hours?"
-            // Foursquare Client ID
-            + CLIENT_ID
-            // Foursquare Client Secret
-            + CLIENT_SECRET
-            + "v=20180329",
+      url: "https://api.foursquare.com/v2/venues/"
+        // Venues Foursquare API
+        + marker.venueID
+        // Foursquare Client ID
+        + CLIENT_ID
+        // Foursquare Client Secret
+        + CLIENT_SECRET
+        + "v=20180329"
+      }).done(function(apiData){
+        console.log(apiData.response.hours.timeframes[0])
+        $("#hoursList").empty()
+        var timeframes = apiData.response.hours.timeframes
+        for(var i = 0;i<timeframes.length;i++){
+          console.log(timeframes[i].days)
+          for (var k = 0; k < timeframes[i].days.length; k++){
+            var dayIndex = timeframes[i].days[k];
+            var timestring = "";
+            for (var j = 0; j < timeframes[i].open.length; j++) {
+              var timeObj = timeframes[i].open[j];
+              var startString = timeObj.start.replace("+", "");
+              var endString = timeObj.end.replace("+", "");
+              timeString = timeSplit(startString) + "-" + timeSplit(endString);
+              console.log(timeString)
+            }
+            // console.log(timeObj)
+            var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
+            $("#hoursList").append(liString)
+    }
 
-          }).done(function(apiData){
-            console.log(apiData.response.hours.timeframes[0])
-            $("#hoursList").empty()
-            var timeframes = apiData.response.hours.timeframes
-            for(var i = 0;i<timeframes.length;i++){
-              console.log(timeframes[i].days)
-              for (var k = 0; k < timeframes[i].days.length; k++){
-                var dayIndex = timeframes[i].days[k];
-                var timestring = "";
-                for (var j = 0; j < timeframes[i].open.length; j++) {
-                  var timeObj = timeframes[i].open[j];
-                  var startString = timeObj.start.replace("+", "");
-                  var endString = timeObj.end.replace("+", "");
-                  timeString = timeSplit(startString) + "-" + timeSplit(endString);
-                  console.log(timeString)
-                }
-                // console.log(timeObj)
-                var liString = "<li>" + days[dayIndex-1] + "  " + timeString + "</li>";
-                $("#hoursList").append(liString)
         }
 
-            }
+      }).fail(function(err){
+        console.log(err)
+      })
 
-          }).fail(function(err){
-            console.log(err)
-          })
-
-    function timeSplit(time) {
-      var hours = time.slice(0,2);
-      var minutes = time.slice(2,4);
-      if(hours[0] == "0") {
-        hours = hours[1]
-      }
-      if (Number(hours) > 12) {
-        var newHours = Number(hours) - 12
-        hours = newHours.toString()
-        ampm = "PM"
-      }
-      else {
-        ampm = "AM"
-      }
-      if (Number(hours) % 12 === 0) {
-        if (Number(hours) === 12) {
+      function timeSplit(time) {
+        var hours = time.slice(0,2);
+        var minutes = time.slice(2,4);
+        if(hours[0] == "0") {
+          hours = hours[1]
+        }
+        if (Number(hours) > 12) {
+          var newHours = Number(hours) - 12
+          hours = newHours.toString()
           ampm = "PM"
         }
-        else if (Number(hours) === 0 || Number(hours) === 24) {
+        else {
           ampm = "AM"
-          hours = "12"
         }
+        if (Number(hours) % 12 === 0) {
+          if (Number(hours) === 12) {
+            ampm = "PM"
+          }
+          else if (Number(hours) === 0 || Number(hours) === 24) {
+            ampm = "AM"
+            hours = "12"
+          }
+        }
+        return hours + ":" + minutes + ampm
       }
-      return hours + ":" + minutes + ampm
-    }
     // Set StreetView Radius
     var streetViewService = new google.maps.StreetViewService();
     var radius = 50;
@@ -162,13 +156,14 @@ var Place = function(locations, BaseViewModel) {
             pitch: 10
           }
         };
-      // Place New Function Here
-      // Google Maps Panorama Box
+        // Place New Function Here
+        // Google Maps Panorama Box
         var panorama = new google.maps.StreetViewPanorama(document.getElementById(
           "pano-box"), panoramaOptions);
       } else {
         infowindow.setContent("<div>" + setTitle + streetAddress +
-          cityAddress + setLike + "</div><div>No Street View Found</div>");
+          cityAddress + setLike +
+          "</div><div>No Street View Found</div>");
       }
     };
     // get the closest streetview image within 50 meters of marker
@@ -180,6 +175,8 @@ var Place = function(locations, BaseViewModel) {
 };
 var ViewModel = function() {
   var self = this;
+  var	CLIENT_ID = "ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5";
+  var CLIENT_SECRET = "NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI";
   this.locationsList = ko.observableArray([]);
   // Create Map and Apply Google Maps API
   map = new google.maps.Map(document.getElementById("map"), {
@@ -191,7 +188,6 @@ var ViewModel = function() {
     styles: mapstyle,
     mapTypeControl: false,
   });
-
   infoWindowShow = function() {
     // Set Info Window Content
     var StartID = "<div id=";
@@ -213,32 +209,25 @@ var ViewModel = function() {
     });
   };
   infoWindowShow();
-
   // Push Locations to Array Observable
   locations.forEach(function(COORD) {
-    self.locationsList()
-      .push(new Place(COORD, self));
+    self.locationsList().push(new Place(COORD, self));
   });
   // Set Current Location
   self.currentLocation = ko.observable(this.locationsList()[0]);
   // Filter Place Titles
   this.filter = ko.observable("");
   this.filterList = ko.computed(function() {
-    var matches = self.locationsList()
-      .filter(function(item) {
-        if (item.title()
-          .toLowerCase()
-          .indexOf(self.filter()
-            .toLowerCase()) >= 0) {
-          item.marker.setVisible(true);
-        } else {
-          item.marker.setVisible(false);
-        };
-        return item.title()
-          .toLowerCase()
-          .indexOf(self.filter()
-            .toLowerCase()) >= 0;
-      });
+    var matches = self.locationsList().filter(function(item) {
+      if (item.title().toLowerCase().indexOf(self.filter().toLowerCase()) >=
+        0) {
+        item.marker.setVisible(true);
+      } else {
+        item.marker.setVisible(false);
+      };
+      return item.title().toLowerCase().indexOf(self.filter().toLowerCase()) >=
+        0;
+    });
     return matches
   });
   // Show Menu and Hide Menu
@@ -274,5 +263,5 @@ mapError = function() {
 }
 // Reload Map Function
 function reloadMap() {
-    location.reload();
+  location.reload();
 }
