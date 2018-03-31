@@ -11,6 +11,7 @@ body {
 a {
 	text-decoration:  none;
 	font-weight: bold;
+	font-size: 13px;
 }
 
 /* Titles & Headers */
@@ -42,7 +43,7 @@ a {
 	height: 80%;
 	width: 100%;
 	position: relative;
-	top: 60px;
+	top: 65px;
 }
 
 /*Menu Container */
@@ -75,7 +76,7 @@ a {
 	cursor: pointer;
 	color: #000000cc;
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.05em;
+	font-size: 1.2em;
 	margin-bottom: 0px;
 	margin-left: 0.6em;
 }
@@ -87,8 +88,8 @@ a {
 
 /* Panorama Dimensions in InfoWindow */
 #pano-box {
-	width: 220px;
-	height: 220px;
+	width: 230px;
+	height: 200px;
 	margin: 0 auto;
 }
 
@@ -123,7 +124,7 @@ a {
 
 /* Dropdown Menu Width */
 .dropdown-menu {
-	min-width: 14.4rem;
+	min-width: 13.6rem;
 }
 
 /* Menu Search Form */
@@ -144,13 +145,4 @@ a {
 	width: 30%;
 	margin-left: 4px;
 	text-align: right;
-}
-
-.gm-iv-address-custom {
-	color: orange;
-}
-
-.no-bullets {
-	list-style-type: none;
-	padding-left: 0px;
 }

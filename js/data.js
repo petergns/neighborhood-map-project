@@ -7,8 +7,7 @@ var locations = [{
 	street: "800 7th St NW #305",
 	// Location City & Zip Code
 	city: "Washington, DC 20001",
-	// Foursquare Venue ID
-	venueID: "4a71a528f964a52053d91fe3/hours?",
+	like: "4a71a528f964a52053d91fe3/hours?",
 	hours: "",
 	// Location Coordinates
 	COORD: {
@@ -24,7 +23,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/gallery-place.cfm",
 	street: "H St NW & 7th Street Northwest",
 	city: "Washington, DC 20001",
-	venueID: "4a3c25dff964a5202ca11fe3/hours?",
+	like: "4a3c25dff964a5202ca11fe3/hours?",
 	hours: "",
 	COORD: {
 		lat: 38.899634,
@@ -36,8 +35,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/smithsonian.cfm?y=12",
 	street: "1278-1160 Jefferson Dr SW",
 	city: "Washington, DC 20024",
-	venueID: "4a8ae0e5f964a520b50a20e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.889057,
 		lng: -77.028505
@@ -48,8 +46,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/federal-triangle.cfm?y=12",
 	street: "302 12th St. NW",
 	city: "Washington, DC 20004",
-	venueID: "4aaffd05f964a520756520e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.893782,
 		lng: -77.028315
@@ -60,8 +57,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/lenfant-plaza.cfm?y=47",
 	street: "600 Maryland Avenue SW",
 	city: "Washington, DC 20024",
-	venueID: "4ad6207df964a5203d0521e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.884784,
 		lng: -77.020884
@@ -72,8 +68,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/woodley-park.cfm?y=38",
 	street: "2700 Connecticut Ave. NW",
 	city: "Washington, DC 20008",
-	venueID: "4af84ed5f964a520160c22e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.924519,
 		lng: -77.0522323
@@ -84,8 +79,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/navy-yard.cfm",
 	street: "200 M Street SE",
 	city: "Washington, DC 20003",
-	venueID: "4bd22c669854d13a7b25fb4d/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.876678,
 		lng: -77.004507
@@ -96,8 +90,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/rosslyn.cfm?y=12",
 	street: "1850 North Moore St",
 	city: "Arlington, VA 22209",
-	venueID: "4ae0bdc5f964a520168221e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.895805,
 		lng: -77.071909
@@ -108,8 +101,7 @@ var locations = [{
 	url: "locations.panerabread.com/va/arlington/1700-n--moore-street-suite-110.html",
 	street: "1700 N Moore St Suite 110",
 	city: "Arlington, VA 22209",
-	venueID: "52333bab11d2d4a9ffcc22a1/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.895588,
 		lng: -77.072040
@@ -120,8 +112,7 @@ var locations = [{
 	url: "wmata.com/rider-guide/stations/fort-totten.cfm?y=36",
 	street: "340 Galloway St NE",
 	city: "Washington, DC 20011",
-	venueID: "4ab4fb23f964a520e17120e3/hours?",
-	hours: "",
+	like: "4a8ae0e5f964a520b50a20e3/hours?",
 	COORD: {
 		lat: 38.952487,
 		lng: -77.002906
