@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Neighborhood Map Project for Udacity">
     <meta name="author" content="petergns">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="img/map-favicon.ico">
     <title>Neighborhood Map</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,17 +21,22 @@
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Neighborhood Meet Up Map</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <!-- Search Menu Dropdown -->
             <li class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Search
+            <button class="btn btn-primary dropdown-toggle"
+                    type="button"
+                    data-toggle="dropdown">Search
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <input class="form-control" id="filter" placeholder="Search" data-bind="value: filter, valueUpdate: 'afterkeydown'">
+              <input class="form-control" id="filter" placeholder="Search"
+                      data-bind="value: filter, valueUpdate: 'afterkeydown'">
               <li id="list"><a data-bind="foreach: filterList" class="places">
               <div data-bind="text: title, click: $root.triggerMarker" class="place"></div></a>
               </li>
@@ -79,8 +84,8 @@
     </footer>
 
     <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
     <!-- More Scripts -->
     <script src="js/lib/knockout-3.4.2.js"></script>
@@ -98,7 +103,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--  <script src="js/lib/jquery-3.2.1.slim.min.js"></script> -->
     <script src="js/lib/popper.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
   </body>
