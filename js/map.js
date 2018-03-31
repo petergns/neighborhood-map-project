@@ -9,7 +9,7 @@ var Place = function(locations, BaseViewModel) {
   this.url = ko.observable(locations.url);
   this.street = ko.observable(locations.street);
   this.city = ko.observable(locations.city);
-  this.like = ko.observable(locations.like);
+  this.foursquare = ko.observable(locations.foursquare);
   var id = locations.id;
   // Set Marker Styles/Type
   setMarkerIcon = function(markerColor) {
@@ -29,14 +29,14 @@ var Place = function(locations, BaseViewModel) {
   var setURL = "https://" + this.url();
   var streetAddress = this.street();
   var cityAddress = this.city();
-  var setLike = this.like();
+  var setFoursquare = this.foursquare();
   this.marker = new google.maps.Marker({
     position: position,
     title: setTitle,
     url: setURL,
     street: streetAddress,
     city: cityAddress,
-    like: setLike,
+    foursquare: setFoursquare,
     // Set Marker Animation Type
     animation: google.maps.Animation.DROP,
     icon: defaultIcon,
@@ -72,7 +72,7 @@ var Place = function(locations, BaseViewModel) {
 
     $.ajax ({
       method: "get",
-      url: "https://api.foursquare.com/v2/venues/" + marker.like
+      url: "https://api.foursquare.com/v2/venues/" + marker.foursquare
       + "client_id=ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5&" +
       "client_secret=NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI&v=20180329",
 
@@ -255,4 +255,8 @@ StartMap = function() {
 // Google Map Error Alert
 mapError = function() {
   document.write("The Google Map has Failed to Load");
+}
+// Reload Map Function
+function reloadMap() {
+    location.reload();
 }

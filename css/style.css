@@ -92,14 +92,6 @@ a {
 	margin: 0 auto;
 }
 
-/* Foursquare Box */
-#fq-box {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
-}
-
-
 /* Menu Icon Position and Cursor */
 #menuIcon {
 	cursor: pointer;
@@ -135,19 +127,6 @@ a {
 	#container {
 		max-width: 275px;
 	}
-}
-
-/*Add-On Container Dimensions */
-.add-ons-container {
-	position: absolute;
-	z-index: 2;
-	width: 30%;
-	margin-left: 4px;
-	text-align: right;
-}
-
-.gm-iv-address-custom {
-	color: orange;
 }
 
 .no-bullets {
