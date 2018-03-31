@@ -175,8 +175,6 @@ var Place = function(locations, BaseViewModel) {
 };
 var ViewModel = function() {
   var self = this;
-  var	CLIENT_ID = "ZGDX32IX0JJJHUABCUAMSSJDIIF05TUOGDLAGTNRZVZOQJP5";
-  var CLIENT_SECRET = "NOFFF3HBE3MCCBUD1K4K20LVM1UC1MZ4R5R0DYV0N2QF4LGI";
   this.locationsList = ko.observableArray([]);
   // Create Map and Apply Google Maps API
   map = new google.maps.Map(document.getElementById("map"), {
