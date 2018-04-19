@@ -4,6 +4,8 @@ Project files for the Neighborhood Map in the Udacity Full Stack Nanodegree.
 
 This project contains a map of places to meet around Washington D.C.
 
+Link to working example: https://petergns.github.io/neighborhood-map-project/
+
 ## Set Up Instructions
 
 Follow these instructions to set up the Neighborhood Map Project.
